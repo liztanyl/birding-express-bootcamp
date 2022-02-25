@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%-include('partials/head') %>
+		<title>View Notes - birbs&borbs</title>
+	</head>
+	<body>
+		<%-include('partials/menu')%>
+
+		<main class="container p-3">
+			<h1 class="display-1 my-5">birbs & borbs</h1>
+			<div class="bg-light p-3 mb-3">
+				<div class="pb-2 mb-2 border-bottom border-dark">
+					<span class="note-title h3">Note</span>
+				</div>
+				<dl>
+					<dt>Spotted on</dt>
+					<dd><%= date_time %></dd>
+					<dt>Species</dt>
+					<dd><%= species %></dd>
+					<dt>Flock Size</dt>
+					<dd><%= flock_size %></dd>
+					<dt>Behaviour</dt>
+					<dd><%= behaviours %></dd>
+				</dl>
+			</div>
+			<div class="bg-light p-3 mb-3">
+				<span class="d-block h5 pb-2 mb-4 border-bottom border-dark"
+					>Comments</span
+				>
+				<% if (comments.length > 0) { comments.forEach(comment => { %>
+				<div class="p-2 m-2 bg-light">
+					<div class="my-1"><%=comment.content%></div>
+					<div class="text-muted my-1">
+						Posted by <%=comment.user%> on <%=comment.created_on%>
+					</div>
+				</div>
+				<% })} else { %>
+				<span>No comments to show.</span>
+				<% }; %>
+
+				<span class="d-block pb-2 mt-4 mb-2 fw-bold">Add a comment</span>
+
+				<form action="/note/<%=id%>/comment" method="POST">
+					<div class="form-group mb-3">
+						<label for="content" class="form-control visually-hidden">
+							Comment:
+						</label>
+						<textarea name="content" class="form-control"></textarea>
+					</div>
+
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+			</div>
+		</main>
+		<!-- Bootstrap script -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>

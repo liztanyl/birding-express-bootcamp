@@ -1,0 +1,74 @@
+body {
+	font-family: "Work Sans", sans-serif;
+	background-color: #bb9a6d;
+	background: url("/images/juan-gomez-questioning-bird.jpg");
+	background-attachment: fixed;
+	background-position: 70% 10%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* height: 100vh; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #1a300d;
+	font-family: "Dosis", sans-serif;
+	font-weight: 700;
+}
+
+h1.display-1 {
+	color: #442d22;
+	font-family: "Dosis", sans-serif;
+	font-weight: 700;
+}
+
+.h3 {
+	font-family: "Dosis", sans-serif;
+	font-weight: 700;
+}
+
+.note-title {
+	padding: 1px 10px;
+	color: #234012;
+	text-decoration: none;
+	background-color: #bac893aa;
+}
+
+main a,
+main a:visited {
+	display: inline-block;
+	padding: 1px 10px;
+	color: #234012;
+	text-decoration: none;
+	background-color: #bac893aa;
+}
+
+main a:active,
+main a:hover {
+	color: #6d4837;
+	text-decoration: none;
+	background-color: #bac89344;
+}
+
+.border-dark {
+	border-color: #1a300d !important;
+}
+
+.bg-light {
+	background-color: #ffffffaa !important;
+}
+
+.btn-primary {
+	background-color: #234012;
+	border-color: #234012;
+}
+
+.btn-primary:hover {
+	color: white !important;
+	background-color: #bac893;
+	border-color: #bac893;
+}
